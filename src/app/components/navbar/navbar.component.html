@@ -1,32 +1,35 @@
-<mat-toolbar  class="navbar" 
+<mat-toolbar  
+class="navbar" 
+color="primary"
 [ngClass]="{ 'navbar-open': menuOpen}"
 (window:resize)="onResize($event)"
 >
     <div class="wrapper">
         <div class="container toolbar">
-            <span>HH</span>
+            <a routerLink="{{homeRoute}}">HH</a>
             <div class="buttons">
               <div class="links">
-                <!-- <a *ngFor="let link of links" class="links">{{link.label}}</a> -->
-                <app-button  *ngFor="let link of links" [label]="link.label"></app-button>
+                <a mat-button routerLink="{{link.value}}" *ngFor="let link of links">{{link.label}}</a>
             </div>
               <button 
               class="toggleMenuButton"
               (click)="onToggleMenu()"
-              mat-icon-button color="accent" aria-label="Open menu">
+              mat-icon-button aria-label="Open menu">
                   <mat-icon>{{menuOpen ? "close" : "menu"}}</mat-icon>
                 </button>
             </div>
         </div>
     </div>
     <div 
-    class="dropdown-menu wrapper" *ngIf="menuOpen">
+    class="dropdown-menu" *ngIf="menuOpen">
         <div class="container grid">
-            <app-button  *ngFor="let link of links" [label]="link.label"></app-button>
+                <a mat-button routerLink="{{link.value}}"  *ngFor="let link of links" (click)="onToggleMenu()" >{{link.label}}</a>
             
         </div>
     </div>
 
 </mat-toolbar>
+
+
 
    

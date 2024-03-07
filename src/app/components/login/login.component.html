@@ -1,0 +1,31 @@
+<main>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+      <h1 class="mat-headline-2">Login</h1>
+
+      <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input type="text" matInput formControlName="firstName">
+        <mat-error *ngIf="getControlErrors('firstName')">{{getControlErrors('firstName')}}</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input type="email" matInput formControlName="lastNames">
+        <mat-error *ngIf="getControlErrors('lastNames')">{{getControlErrors('lastNames')}}</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="getControlErrors('email')">{{getControlErrors('email')}}</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="getControlErrors('password')">{{getControlErrors('password')}}</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+      <mat-label>Confirm password</mat-label>
+      <input type="password" matInput formControlName="confirmPassword">
+        <mat-error *ngIf="getControlErrors('confirmPassword')">{{getControlErrors('confirmPassword')}}</mat-error>
+    </mat-form-field>
+  </form>
+</main>

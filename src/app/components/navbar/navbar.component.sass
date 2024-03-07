@@ -6,10 +6,9 @@
     display: grid
     grid-auto-rows: min-content 1fr
     padding-top: 5px
+    z-index: 2000 !important
 
 .navbar
-    background-color: $primary
-    color: $secondary
     .toolbar
         display: flex
         align-items: center
@@ -29,8 +28,13 @@
 
 .dropdown-menu
     animation: fadeIn 0.5s ease
-    a
-        display: block
+    overflow: hidden
+    
+    .container 
+        a
+            display: block
+            margin-bottom: 30px
+            font-size: 30px
 
 @keyframes fadeIn
     0%

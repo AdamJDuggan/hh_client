@@ -1,8 +1,9 @@
 // Angular
 import { Component } from '@angular/core';
-
 // Utils
 import variables from '../../utils/variables';
+// Routes
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-navbar',
@@ -20,9 +21,9 @@ export class NavbarComponent {
       this.menuOpen = false;
     }
   }
-
+  homeRoute = routes.HOME;
   links = [
-    { route: '/hubs', label: 'Hubs' },
-    { route: '/account', label: 'Account' },
+    { value: routes.HUBS, label: 'Hubs' },
+    { value: routes.ACCOUNT, label: 'Account' },
   ];
 }
